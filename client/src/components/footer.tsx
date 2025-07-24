@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="flex items-center mb-4">
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 <FaExchangeAlt className="inline mr-2" />
-                One Click
+                ContextSwap
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 One Click. All rights reserved. Made with ❤️ for productivity enthusiasts.</p>
+          <p>&copy; 2024 ContextSwap. All rights reserved. Made with ❤️ for productivity enthusiasts.</p>
         </div>
       </div>
     </footer>

@@ -41,7 +41,7 @@ npm run dev
 ## Project Structure
 
 ```
-One Click-project/
+ContextSwap-project/
 ├── client/                  # Frontend React application
 │   ├── src/
 │   │   ├── components/     # Reusable UI components

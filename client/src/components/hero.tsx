@@ -24,7 +24,7 @@ export default function Hero() {
                 in 1 click
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
-                Study. Code. Meet. Automate. One Click instantly launches your perfect productivity setup with templates for every task.
+                Study. Code. Meet. Automate.ContextSwap instantly launches your perfect productivity setup with templates for every task.
               </p>
             </div>
 

@@ -3,12 +3,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function FAQ() {
   const faqs = [
     {
-      question: "How does One Click work?",
-      answer: "One Click creates templates that launch multiple apps, websites, and files simultaneously. You define what tools you need for different tasks (Study, Coding, etc.) and launch them all with one click."
+      question: "How does ContextSwap work?",
+      answer: "ContextSwap creates templates that launch multiple apps, websites, and files simultaneously. You define what tools you need for different tasks (Study, Coding, etc.) and launch them all with one click."
     },
     {
       question: "Is my data safe?",
-      answer: "Absolutely. One Click runs entirely on your device with no cloud servers. Your templates, preferences, and usage data never leave your computer or phone."
+      answer: "Absolutely. ContextSwap runs entirely on your device with no cloud servers. Your templates, preferences, and usage data never leave your computer or phone."
     },
     {
       question: "Can I customize the templates?",
@@ -16,7 +16,7 @@ export default function FAQ() {
     },
     {
       question: "What platforms are supported?",
-      answer: "One Click is available for Windows (as a .exe file) and Android (as an .apk file). iOS and macOS versions are coming soon!"
+      answer: "ContextSwap is available for Windows (as a .exe file) and Android (as an .apk file). iOS and macOS versions are coming soon!"
     },
     {
       question: "Do I need an internet connection?",

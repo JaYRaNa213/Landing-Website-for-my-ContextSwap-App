@@ -33,7 +33,7 @@ export default function UseCases() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Whether you're a student, developer, or remote worker, One Click adapts to your workflow
+            Whether you're a student, developer, or remote worker, ContextSwap adapts to your workflow
           </p>
         </div>
 

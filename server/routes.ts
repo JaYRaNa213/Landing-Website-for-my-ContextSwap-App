@@ -9,7 +9,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     // In a real implementation, this would serve the actual .exe file
     res.json({ 
       message: "Windows download would be served here",
-      filename: "One Click-Setup.exe",
+      filename: "ContextSwap-Setup.exe",
       size: "90MB",
       version: "1.0.0"
     });

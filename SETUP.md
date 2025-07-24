@@ -1,11 +1,11 @@
-# One Click Setup Guide
+# ContextSwap Setup Guide
 
 ## Quick Setup for VS Code
 
 1. **Extract the project files** to your desired directory
 2. **Open the project** in VS Code:
    ```bash
-   code One Click-project
+   code ContextSwap-project
    ```
 
 3. **Install dependencies**:
@@ -23,7 +23,7 @@
 ## Project Structure
 
 ```
-One Click-project/
+ContextSwap-project/
 ├── client/                 # Frontend (React + TypeScript)
 │   ├── src/
 │   │   ├── components/    # UI components

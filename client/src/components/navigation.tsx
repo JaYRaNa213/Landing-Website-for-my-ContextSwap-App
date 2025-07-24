@@ -21,7 +21,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               <FaExchangeAlt className="inline mr-2" />
-              One Click
+              ContextSwap
             </div>
           </div>
           

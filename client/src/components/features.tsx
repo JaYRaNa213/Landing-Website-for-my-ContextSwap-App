@@ -4,7 +4,7 @@ export default function Features() {
   const features = [
     {
       icon: <FaMousePointer className="text-2xl text-white" />,
-      title: "One-Click Launch",
+      title: "ContextSwap Launch",
       description: "Instantly launch your entire workspace setup - apps, websites, files, and music - with a single click.",
       gradient: "from-blue-600 to-purple-600",
       hoverColor: "hover:border-blue-500/50"
@@ -53,7 +53,7 @@ export default function Features() {
           <h2 className="text-4xl font-bold mb-4">
             Why{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              One Click?
+              ContextSwap?
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
