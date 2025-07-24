@@ -1,0 +1,112 @@
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import { FaExchangeAlt } from "react-icons/fa";
+
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <FaExchangeAlt className="inline mr-2" />
+              One Click
+            </div>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <button 
+              onClick={() => scrollToSection('features')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Features
+            </button>
+            <button 
+              onClick={() => scrollToSection('demo')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Demo
+            </button>
+            <button 
+              onClick={() => scrollToSection('download')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Download
+            </button>
+            <button 
+              onClick={() => scrollToSection('support')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Support
+            </button>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <Button 
+              onClick={() => scrollToSection('download')}
+              className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg font-medium transition-all transform hover:scale-105"
+            >
+              Download Now
+            </Button>
+            
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-white"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/40 backdrop-blur rounded-lg p-4 mt-2">
+            <div className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('features')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Features
+              </button>
+              <button 
+                onClick={() => scrollToSection('demo')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Demo
+              </button>
+              <button 
+                onClick={() => scrollToSection('download')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Download
+              </button>
+              <button 
+                onClick={() => scrollToSection('support')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Support
+              </button>
+              <Button 
+                onClick={() => scrollToSection('download')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full"
+              >
+                Download Now
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
