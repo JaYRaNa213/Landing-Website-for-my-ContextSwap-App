@@ -107,6 +107,18 @@ export default function Navigation() {
       <FaWindows className="text-xl" />
       Download Now
     </a>
+
+    {/* <a
+        aria-label="Download ModoCore setup for Windows"
+        href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/v1.0.0/OnlyOneClick.Setup.1.0.0.exe"
+        download
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 transition-all transform hover:scale-105 shadow-xl"
+      >
+        <FaWindows className="mr-2" />
+        Download for Windows
+      </a> */}
             </div>
           </div>
         )}

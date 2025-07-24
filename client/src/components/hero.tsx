@@ -88,7 +88,7 @@ export default function Hero() {
           {/* Hero Image */}
           <div className="relative animate-slide-in-right">
             <img
-              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+              src="https://res.cloudinary.com/djtq2eywl/image/upload/v1753357707/Screenshot_1101_bkfbyb.png"
               alt="ModoCore – One-click productivity launcher desktop app for developers and students"
               className="rounded-2xl shadow-2xl w-full animate-float"
             />
