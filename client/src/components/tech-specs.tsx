@@ -21,7 +21,7 @@ export default function TechSpecs() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Windows App Card */}
-          <div className="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div className="bg-black/5 backdrop-blur rounded-2xl p-8 border border-white/10">
             <div className="flex items-center mb-6">
               <FaWindows className="text-4xl text-blue-400 mr-4" />
               <h3 className="text-2xl font-semibold">Windows App (.exe)</h3>
@@ -69,7 +69,7 @@ export default function TechSpecs() {
           </div>
 
           {/* Privacy & Security Card */}
-          <div className="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10">
+          <div className="bg-black/5 backdrop-blur rounded-2xl p-8 border border-white/10">
             <div className="text-center mb-6">
               <FaUserShield className="text-4xl text-green-400 mb-4 mx-auto" />
               <h3 className="text-2xl font-semibold">Privacy & Security</h3>

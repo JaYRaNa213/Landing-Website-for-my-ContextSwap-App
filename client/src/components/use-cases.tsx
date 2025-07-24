@@ -48,7 +48,7 @@ export default function UseCases() {
           <div className="space-y-8">
             <div className="space-y-6">
               {useCases.map((useCase, index) => (
-                <div key={index} className="p-6 bg-white/5 backdrop-blur rounded-xl border border-white/10">
+                <div key={index} className="p-6 bg-black/5 backdrop-blur rounded-xl border border-white/10">
                   <div className="flex items-center mb-4">
                     <div className={`w-12 h-12 ${useCase.bgColor} rounded-lg flex items-center justify-center mr-4`}>
                       {useCase.icon}

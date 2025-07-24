@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { FaExchangeAlt } from "react-icons/fa";
+import { FaExchangeAlt, FaWindows } from "react-icons/fa";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,18 +32,18 @@ export default function Navigation() {
             >
               Features
             </button>
-            <button 
+            {/* <button 
               onClick={() => scrollToSection('demo')}
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Demo
-            </button>
-            <button 
+              
+            </button> */}
+            {/* <button 
               onClick={() => scrollToSection('download')}
               className="text-gray-300 hover:text-white transition-colors"
             >
               Download
-            </button>
+            </button> */}
             <button 
               onClick={() => scrollToSection('support')}
               className="text-gray-300 hover:text-white transition-colors"
@@ -97,12 +97,16 @@ export default function Navigation() {
               >
                 Support
               </button>
-              <Button 
-                onClick={() => scrollToSection('download')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full"
-              >
-                Download Now
-              </Button>
+              <a
+      href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/v1.0.0/OnlyOneClick.Setup.1.0.0.exe"
+      download
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full px-6 py-3 rounded-lg font-semibold text-white text-center flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-lg"
+    >
+      <FaWindows className="text-xl" />
+      Download Now
+    </a>
             </div>
           </div>
         )}

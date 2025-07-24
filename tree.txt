@@ -1,4 +1,4 @@
-├── .env.example
+├── .env
 ├── .gitignore
 ├── client
 │   ├── index.html
@@ -8,7 +8,6 @@
 │       │   ├── demo.tsx
 │       │   ├── faq.tsx
 │       │   ├── features.tsx
-│       │   ├── final-cta.tsx
 │       │   ├── footer.tsx
 │       │   ├── hero.tsx
 │       │   ├── navigation.tsx
@@ -89,5 +88,6 @@
 │   └── schema.ts
 ├── tailwind.config.ts
 ├── tree.cjs
+├── tree.txt
 ├── tsconfig.json
 └── vite.config.ts

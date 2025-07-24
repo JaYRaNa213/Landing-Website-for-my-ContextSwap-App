@@ -65,7 +65,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10 ${feature.hoverColor} transition-all transform hover:scale-105`}
+              className={`bg-black/5 backdrop-blur rounded-2xl p-8 border border-white/10 ${feature.hoverColor} transition-all transform hover:scale-105`}
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center mb-6`}>
                 {feature.icon}
