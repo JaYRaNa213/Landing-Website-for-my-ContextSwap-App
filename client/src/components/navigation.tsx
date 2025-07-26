@@ -98,7 +98,7 @@ export default function Navigation() {
                 Support
               </button>
               <a
-      href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/v1.0.0/OnlyOneClick.Setup.1.0.0.exe"
+      href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-03f2f4fa673e9f8af2a1/ContextSwap-Setup-1.0.0.exe"
       download
       target="_blank"
       rel="noopener noreferrer"
