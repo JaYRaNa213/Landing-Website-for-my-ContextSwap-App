@@ -57,7 +57,7 @@ app.use((req, res, next) => {
 
   // Explicitly use IPv4 and correct port variable
   const port = parseInt(process.env.PORT || "3000", 10);
-  app.listen(port, "127.0.0.1", () => {
-    console.log(`✅ Server running at http://127.0.0.1:${port}`);
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`✅ Server running at http://0.0.0.0:${port}`);
   });
 })();
