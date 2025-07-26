@@ -32,6 +32,13 @@ export default function Navigation() {
             >
               Features
             </button>
+
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              About us
+            </button>
             {/* <button 
               onClick={() => scrollToSection('demo')}
               className="text-gray-300 hover:text-white transition-colors"

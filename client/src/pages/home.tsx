@@ -6,6 +6,7 @@ import UseCases from "@/components/use-cases";
 import TechSpecs from "@/components/tech-specs";
 import FAQ from "@/components/faq";
 import Demo from "@/components/demo";
+import AboutUsSection from "@/components/AboutSection";
 
 import Footer from "@/components/footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <TechSpecs />
       <FAQ />
       {/* <FinalCTA /> */}
+      <AboutUsSection />
       <Footer />
     </div>
   );

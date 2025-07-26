@@ -16,22 +16,23 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                Switch your entire{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  digital workspace
-                </span>{" "}
-                in 1 click
-              </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Study. Code. Meet. Automate.ContextSwap instantly launches your perfect productivity setup with templates for every task.
-              </p>
-            </div>
+  <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+    Build and Launch Your{" "}
+    <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+      Perfect Workflow
+    </span>{" "}
+    in Seconds
+  </h1>
+  <p className="text-xl text-gray-300 leading-relaxed">
+    ContextSwap lets you create custom templates based on your daily routines—whether you're a student, developer, designer, or remote worker. Add your favorite apps and websites, and launch everything exactly where you left off—ready to work, instantly.
+  </p>
+</div>
+
 
             {/* Download Buttons */}
 <div className="flex flex-col sm:flex-row gap-4">
   <a
-    aria-label="Download ModoCore setup for Windows"
+    aria-label="Download ContextSwap setup for Windows"
     href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-03f2f4fa673e9f8af2a1/ContextSwap-Setup-1.0.0.exe"
     download
     target="_blank"

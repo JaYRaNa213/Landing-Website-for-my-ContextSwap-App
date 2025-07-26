@@ -40,7 +40,7 @@ export default function UseCases() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              src="https://res.cloudinary.com/djtq2eywl/image/upload/v1753505302/Screenshot_1108_xluweq.png"
               alt="Modern home office with dual monitors"
               className="rounded-2xl shadow-2xl w-full"
             />

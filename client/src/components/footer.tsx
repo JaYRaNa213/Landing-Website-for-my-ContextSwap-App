@@ -1,4 +1,4 @@
-import { FaExchangeAlt, FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
+import { FaExchangeAlt, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -20,26 +20,31 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Switch your entire digital workspace in 1 click. The ultimate productivity tool for students, developers, and remote workers.
+              Switch your digital workspace in one click. The ultimate automation tool for developers, creators, and productivity lovers.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://twitter.com/your-handle" // optional
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <FaTwitter className="text-xl" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://github.com/JaYRaNa213/contextswap"
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
                 <FaGithub className="text-xl" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <FaDiscord className="text-xl" />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4">App</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('features')}
                   className="hover:text-white transition-colors"
                 >
@@ -47,7 +52,7 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('demo')}
                   className="hover:text-white transition-colors"
                 >
@@ -55,32 +60,42 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('download')}
+                <a
+                  href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-03f2f4fa673e9f8af2a1/ContextSwap-Setup-1.0.0.exe"
+                  target="_blank"
                   className="hover:text-white transition-colors"
                 >
                   Download
-                </button>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">Roadmap</a>
+                </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Tutorials</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Documentation {/* future */}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Contact
+                </a>
+              </li>
+              {/* Optional future policy */}
+              {/* <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li> */}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 ContextSwap. All rights reserved. Made with ❤️ for productivity enthusiasts.</p>
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 ContextSwap. All rights reserved. Built for creators and coders.</p>
         </div>
       </div>
     </footer>

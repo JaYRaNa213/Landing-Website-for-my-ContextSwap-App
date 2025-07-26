@@ -67,7 +67,7 @@ export default function Demo() {
         <div className="relative">
           <img
             src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&h=600"
-            alt="ModoCore Preview"
+            alt="ContextSwap Preview"
             className="rounded-2xl shadow-2xl animate-fade-in"
           />
           {/* Floating Icons */}
