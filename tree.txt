@@ -5,6 +5,7 @@
 │   └── src
 │       ├── App.tsx
 │       ├── components
+│       │   ├── AboutSection.tsx
 │       │   ├── demo.tsx
 │       │   ├── faq.tsx
 │       │   ├── features.tsx
