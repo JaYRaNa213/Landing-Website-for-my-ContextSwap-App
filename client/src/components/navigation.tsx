@@ -60,12 +60,17 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button 
-              onClick={() => scrollToSection('download')}
-              className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg font-medium transition-all transform hover:scale-105"
-            >
-              Download Now
-            </Button>
+            <a
+  href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-03f2f4fa673e9f8af2a1/ContextSwap-Setup-1.0.0.exe"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg font-medium transition-all transform hover:scale-105 text-white"
+>
+  <FaWindows className="inline mr-2" />
+  Download Now
+</a>
+
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
