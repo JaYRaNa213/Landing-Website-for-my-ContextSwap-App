@@ -74,6 +74,13 @@
 │           ├── home.tsx
 │           └── not-found.tsx
 ├── components.json
+├── dist
+│   ├── index.js
+│   └── public
+│       ├── assets
+│       │   ├── index-4kQXi504.js
+│       │   └── index-BqfXeDjQ.css
+│       └── index.html
 ├── drizzle.config.ts
 ├── package-lock.json
 ├── package.json

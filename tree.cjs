@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const IGNORE = [".git", "node_modules", "dist", ".next", ".turbo"];
+const IGNORE = [".git", "node_modules", ".next", ".turbo"];
 
 function walk(dir, prefix = "", treeLines = []) {
   const entries = fs

@@ -7,20 +7,17 @@ import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 import { fileURLToPath } from "url";
 
-// Fix for import.meta.dirname in ES Modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const viteLogger = createLogger();
 
-export function log(message: string, source = "express") {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
+export function log(msg: string, source = "express") {
+  const time = new Date().toLocaleTimeString("en-US", {
+    hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    hour12: true,
   });
-
-  console.log(`${formattedTime} [${source}] ${message}`);
+  console.log(`${time} [${source}] ${msg}`);
 }
 
 export async function setupVite(app: Express, server: Server) {
@@ -29,8 +26,8 @@ export async function setupVite(app: Express, server: Server) {
     configFile: false,
     customLogger: {
       ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
+      error: (msg, opts) => {
+        viteLogger.error(msg, opts);
         process.exit(1);
       },
     },
@@ -47,15 +44,15 @@ export async function setupVite(app: Express, server: Server) {
     const url = req.originalUrl;
     try {
       const templatePath = path.resolve(__dirname, "..", "client", "index.html");
-
       let template = await fs.promises.readFile(templatePath, "utf-8");
+
       template = template.replace(
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
 
-      const transformed = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(transformed);
+      const html = await vite.transformIndexHtml(url, template);
+      res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -64,16 +61,16 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distDir = path.resolve(__dirname, "..", "dist");
+  const publicDir = path.resolve(__dirname, "..", "dist/public");
 
-  if (!fs.existsSync(distDir)) {
-    throw new Error(`❌ Build folder not found: ${distDir}. Did you run 'vite build'?`);
+  if (!fs.existsSync(publicDir)) {
+    throw new Error(`❌ Build folder not found: ${publicDir}. Did you run 'vite build'?`);
   }
 
-  app.use(express.static(distDir));
+  app.use(express.static(publicDir));
 
   app.use("*", (_req, res) => {
-    const indexPath = path.join(distDir, "index.html");
+    const indexPath = path.join(publicDir, "index.html");
     if (!fs.existsSync(indexPath)) {
       res.status(404).send("Build index.html not found");
     } else {
