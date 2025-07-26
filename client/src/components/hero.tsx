@@ -60,11 +60,11 @@ export default function Hero() {
     title="Click to copy"
     onClick={() =>
       navigator.clipboard.writeText(
-        "865b7065eb0ff3330974ec6920abadf5b1737e9524bd97782cdbf36c6ae5990f"
+        "cc3f1418e008a18453350291a80f0b6ec925fea3d9c882d5d159ea9d56b008d6"
       )
     }
   >
-    865b7065eb0ff3330974ec6920abadf5b1737e9524bd97782cdbf36c6ae5990f
+    cc3f1418e008a18453350291a80f0b6ec925fea3d9c882d5d159ea9d56b008d6
   </code>
 </p>
 
@@ -88,8 +88,8 @@ export default function Hero() {
           {/* Hero Image */}
           <div className="relative animate-slide-in-right">
             <img
-              src="https://res.cloudinary.com/djtq2eywl/image/upload/v1753357707/Screenshot_1101_bkfbyb.png"
-              alt="ModoCore – One-click productivity launcher desktop app for developers and students"
+              src="https://res.cloudinary.com/djtq2eywl/image/upload/v1753504471/Screenshot_1107_imxrn7.png"
+              alt="ContextSwap – One-click productivity launcher desktop app for developers and students"
               className="rounded-2xl shadow-2xl w-full animate-float"
             />
 
