@@ -76,7 +76,7 @@ export default function Hero() {
                 <div className="text-sm text-gray-400">Setup Time</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400">10+</div>
+                <div className="text-2xl font-bold text-purple-400">Built In</div>
                 <div className="text-sm text-gray-400">Templates</div>
               </div>
               <div className="text-center">
