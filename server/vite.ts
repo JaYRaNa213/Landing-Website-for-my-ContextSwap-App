@@ -1,9 +1,10 @@
+// server/vite.ts
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { createServer as createViteServer, createLogger } from "vite";
+import { createServer as createViteServer, createLogger, type InlineConfig } from "vite";
 import { type Server } from "http";
-import viteConfig from "../vite.config";
+import { viteRootConfig } from "../vite.config"; // ✅ NOW it works
 import { nanoid } from "nanoid";
 import { fileURLToPath } from "url";
 
@@ -22,7 +23,7 @@ export function log(msg: string, source = "express") {
 
 export async function setupVite(app: Express, server: Server) {
   const vite = await createViteServer({
-    ...viteConfig,
+    ...viteRootConfig,
     configFile: false,
     customLogger: {
       ...viteLogger,
@@ -36,7 +37,7 @@ export async function setupVite(app: Express, server: Server) {
       hmr: { server },
     },
     appType: "custom",
-  });
+  } satisfies InlineConfig); // ✅ Enforce types
 
   app.use(vite.middlewares);
 
