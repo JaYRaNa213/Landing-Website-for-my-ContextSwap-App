@@ -5,6 +5,7 @@
 │   └── src
 │       ├── App.tsx
 │       ├── components
+│       │   ├── AboutSection.tsx
 │       │   ├── demo.tsx
 │       │   ├── faq.tsx
 │       │   ├── features.tsx
@@ -73,11 +74,19 @@
 │           ├── home.tsx
 │           └── not-found.tsx
 ├── components.json
+├── dist
+│   ├── index.js
+│   └── public
+│       ├── assets
+│       │   ├── index-4kQXi504.js
+│       │   └── index-BqfXeDjQ.css
+│       └── index.html
 ├── drizzle.config.ts
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.js
 ├── README.md
+├── render.yaml
 ├── server
 │   ├── index.ts
 │   ├── routes.ts

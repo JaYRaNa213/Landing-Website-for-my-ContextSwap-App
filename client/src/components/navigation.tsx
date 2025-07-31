@@ -67,6 +67,10 @@ export default function Navigation() {
   rel="noopener noreferrer"
   className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg font-medium transition-all transform hover:scale-105 text-white"
 >
+<<<<<<< HEAD
+=======
+  <FaWindows className="inline mr-2" />
+>>>>>>> 5f46110a603fb55da051c79fba7c9bdbfac5e3d9
   Download Now
 </a>
 
