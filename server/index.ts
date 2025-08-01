@@ -127,10 +127,20 @@ app.use((req, res, next) => {
     const clientBuildPath = path.resolve(__dirname, "../dist/public");
     app.use(express.static(clientBuildPath));
 
+    app.get('/ping', (_req, res) => {
+  res.send('pong');
+});
+
+
+
+    
+
     app.get("*", (_, res) => {
       res.sendFile(path.join(clientBuildPath, "index.html"));
     });
   }
+
+  
 
   app.listen(port, "0.0.0.0", () => {
     console.log(`✅ Server running at http://localhost:${port}`);
