@@ -82,7 +82,8 @@
 │   │   └── pages
 │   │       ├── home.tsx
 │   │       └── not-found.tsx
-│   └── tailwind.config.ts
+│   ├── tailwind.config.ts
+│   └── vite.config.ts
 ├── components.json
 ├── dist
 │   ├── index.cjs
@@ -102,6 +103,7 @@
 │   ├── index.ts
 │   ├── routes.ts
 │   ├── storage.ts
+│   ├── tsconfig.json
 │   └── vite.ts
 ├── SETUP.md
 ├── shared
