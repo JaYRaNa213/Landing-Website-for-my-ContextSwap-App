@@ -10,12 +10,13 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
     "esbuild": "^0.25.8",
-    "vite": "^7.0.6",
-    "rollup": "^3.29.4"
+    "rollup": "^3.29.4",
+    "vite": "^7.0.6"
   },
   "dependencies": {
     "react": "^19.1.1",
     "sonner": "^2.0.6",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "wouter": "^3.7.1"
   }
 }
