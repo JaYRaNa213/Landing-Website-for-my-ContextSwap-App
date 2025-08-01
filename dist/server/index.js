@@ -1,10 +1,15 @@
+// // server/index.ts
 // import express, { type Request, Response, NextFunction } from "express";
-// import { registerRoutes } from "./routes";
-// import { setupVite, serveStatic, log } from "./vite";
+// import path from "path";
+// import { fileURLToPath } from "url";
+// import { registerRoutes } from "./routes.js"; // 👈 Add `.js` for ESM compatibility
+// import { setupVite, serveStatic, log } from "./vite.js"; // 👈 Add `.js` too
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 // const app = express();
+// const port = parseInt(process.env.PORT || "3000", 10);
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
-// // Logger middleware for API
 // app.use((req, res, next) => {
 //   const start = Date.now();
 //   const path = req.path;
@@ -26,35 +31,41 @@
 // });
 // (async () => {
 //   const server = await registerRoutes(app);
-//   // Global error handler
 //   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-//     const status = err.status || 500;
-//     const message = err.message || "Internal Server Error";
 //     console.error("❌ Server Error:", err);
-//     res.status(status).json({ message });
+//     res.status(err.status || 500).json({ message: err.message || "Internal Server Error" });
 //   });
 //   if (process.env.NODE_ENV === "development") {
 //     await setupVite(app, server);
 //   } else {
-//     serveStatic(app);
+//     const clientBuildPath = path.resolve(__dirname, "../dist/public");
+//     app.use(express.static(clientBuildPath));
+//     app.get("*", (_, res) => {
+//       res.sendFile(path.join(clientBuildPath, "index.html"));
+//     });
 //   }
-//   const port = parseInt(process.env.PORT || "3000", 10);
 //   app.listen(port, "0.0.0.0", () => {
-//     console.log(`✅ Server running at http://0.0.0.0:${port}`);
+//     console.log(`✅ Server running at http://localhost:${port}`);
 //   });
 // })();
-// server/index.ts
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { registerRoutes } from "./routes.js"; // 👈 Add `.js` for ESM compatibility
-import { setupVite, log } from "./vite.js"; // 👈 Add `.js` too
+import { registerRoutes } from "./routes.js"; // 👈 Keep `.js`
+import { setupVite, log } from "./vite.js"; // 👈 Keep `.js`
+// ✅ Fix for importing CommonJS cors in ESM
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const cors = require("cors");
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = parseInt(process.env.PORT || "3000", 10);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// ✅ Enable CORS for your Vercel frontend
+const allowedOrigin = "https://contextswap-8lun.onrender.com";
+app.use(cors({ origin: allowedOrigin }));
 app.use((req, res, next) => {
     const start = Date.now();
     const path = req.path;
