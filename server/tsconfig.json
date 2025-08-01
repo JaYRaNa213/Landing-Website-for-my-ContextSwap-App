@@ -1,11 +1,15 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "noEmit": false,                           // override base
+    "allowImportingTsExtensions": false,       // needed for emit
     "outDir": "../dist",
     "module": "ESNext",
     "target": "ES2020",
     "moduleResolution": "Node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true
   },
-  "include": ["./**/*.ts"]
+  "include": ["./**/*"]
 }

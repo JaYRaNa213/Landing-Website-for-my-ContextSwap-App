@@ -54,16 +54,15 @@
 //   });
 // })();
 
-
 // server/index.ts
 import express, { type Request, Response, NextFunction } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "./routes.js"; // 👈 Add `.js` for ESM compatibility
+import { setupVite, serveStatic, log } from "./vite.js"; // 👈 Add `.js` too
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const app = express();
 const port = parseInt(process.env.PORT || "3000", 10);
@@ -71,7 +70,6 @@ const port = parseInt(process.env.PORT || "3000", 10);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Logger middleware
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -104,7 +102,7 @@ app.use((req, res, next) => {
   });
 
   if (process.env.NODE_ENV === "development") {
-    await setupVite(app, server); // Uses Vite dev server middleware
+    await setupVite(app, server);
   } else {
     const clientBuildPath = path.resolve(__dirname, "../dist/public");
     app.use(express.static(clientBuildPath));

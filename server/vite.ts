@@ -4,7 +4,8 @@ import fs from "fs";
 import path from "path";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
-import viteRootConfig from "../vite.config";
+import { loadConfigFromFile } from "vite";
+
 import type { UserConfigExport } from "vite";
 import { nanoid } from "nanoid";
 import { fileURLToPath } from "url";
@@ -13,6 +14,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const viteLogger = createLogger();
+
+
+
+let viteRootConfig: UserConfigExport;
+
+(async () => {
+  const result = await loadConfigFromFile({
+    command: "serve",
+    mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  });
+  viteRootConfig = result?.config || {};
+})();
+
+
+
 
 export function log(msg: string, source = "express") {
   const time = new Date().toLocaleTimeString("en-US", {
