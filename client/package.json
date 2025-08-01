@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -8,9 +9,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
+    "esbuild": "^0.25.8",
     "vite": "^7.0.6"
   },
   "dependencies": {
-    "sonner": "^2.0.6"
+    "react": "^19.1.1",
+    "sonner": "^2.0.6",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

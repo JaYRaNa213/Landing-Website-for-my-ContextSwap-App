@@ -4,12 +4,13 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
-    "client": "vite --config client/vite.config.ts",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:client": "vite --config client/vite.config.ts",
+    "dev:server": "tsx server/index.ts",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --config vite.config.ts",
-    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --outdir=dist --packages=external",
-    "start": "cross-env NODE_ENV=production node dist/index.js"
+    "build:client": "vite build --config client/vite.config.ts",
+    "build:server": "tsc --project server/tsconfig.json",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

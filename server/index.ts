@@ -54,28 +54,67 @@
 //   });
 // })();
 
-import express from "express";
+
+// server/index.ts
+import express, { type Request, Response, NextFunction } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-
-const app = express();
-const PORT = 3000;
-
-// __dirname workaround for ES modules
+import { registerRoutes } from "./routes";
+import { setupVite, serveStatic, log } from "./vite";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ✅ Resolve client/dist from root, not from dist/
-const clientBuildPath = path.resolve(__dirname, "../client/dist");
 
-// Serve static frontend files
-app.use(express.static(clientBuildPath));
+const app = express();
+const port = parseInt(process.env.PORT || "3000", 10);
 
-// Fallback to index.html for all frontend routes
-app.get("*", (_, res) => {
-  res.sendFile(path.join(clientBuildPath, "index.html"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// Logger middleware
+app.use((req, res, next) => {
+  const start = Date.now();
+  const path = req.path;
+  let capturedJson: any;
+
+  const originalJson = res.json;
+  res.json = function (body, ...args) {
+    capturedJson = body;
+    return originalJson.call(this, body, ...args);
+  };
+
+  res.on("finish", () => {
+    if (path.startsWith("/api")) {
+      const duration = Date.now() - start;
+      let msg = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
+      if (capturedJson) msg += ` :: ${JSON.stringify(capturedJson)}`;
+      log(msg.length > 80 ? msg.slice(0, 77) + "…" : msg);
+    }
+  });
+
+  next();
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+(async () => {
+  const server = await registerRoutes(app);
+
+  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    console.error("❌ Server Error:", err);
+    res.status(err.status || 500).json({ message: err.message || "Internal Server Error" });
+  });
+
+  if (process.env.NODE_ENV === "development") {
+    await setupVite(app, server); // Uses Vite dev server middleware
+  } else {
+    const clientBuildPath = path.resolve(__dirname, "../dist/public");
+    app.use(express.static(clientBuildPath));
+
+    app.get("*", (_, res) => {
+      res.sendFile(path.join(clientBuildPath, "index.html"));
+    });
+  }
+
+  app.listen(port, "0.0.0.0", () => {
+    console.log(`✅ Server running at http://localhost:${port}`);
+  });
+})();

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from './ui/button';
 import { FaWindows, FaAndroid, FaCode, FaRocket } from "react-icons/fa";
 import { IoFlash } from "react-icons/io5";
 

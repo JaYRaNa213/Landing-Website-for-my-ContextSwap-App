@@ -1,7 +1,7 @@
 "use client";
 
 import { FaWindows, FaDownload, FaLock, FaUserShield, FaCode } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import { Button } from './ui/button';
 
 export default function TechSpecs() {
   return (

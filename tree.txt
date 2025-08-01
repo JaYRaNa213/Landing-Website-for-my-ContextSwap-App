@@ -3,7 +3,8 @@
 ├── client
 │   ├── dist
 │   │   ├── assets
-│   │   │   └── index-BmnTzygK.js
+│   │   │   ├── index-C7SMByzS.css
+│   │   │   └── index-vc-mbB-s.js
 │   │   └── index.html
 │   ├── index.html
 │   ├── package-lock.json
@@ -81,18 +82,20 @@
 │   │   └── pages
 │   │       ├── home.tsx
 │   │       └── not-found.tsx
-│   └── vite.config.ts
+│   └── tailwind.config.ts
 ├── components.json
 ├── dist
+│   ├── index.cjs
 │   ├── index.js
 │   └── public
 │       ├── assets
-│       │   └── index-BE1Q4NSt.js
+│       │   ├── index-BqfXeDjQ.css
+│       │   └── index-Cu7uIpTg.js
 │       └── index.html
 ├── drizzle.config.ts
 ├── package-lock.json
 ├── package.json
-├── postcss.config.js
+├── postcss.config.cjs
 ├── README.md
 ├── render.yaml
 ├── server

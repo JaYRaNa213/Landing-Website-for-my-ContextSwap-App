@@ -2,13 +2,15 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { createServer as createViteServer, createLogger, type InlineConfig } from "vite";
+import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
-import { viteRootConfig } from "../vite.config"; // ✅ NOW it works
+import viteRootConfig from "../vite.config";
+import type { UserConfigExport } from "vite";
 import { nanoid } from "nanoid";
 import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const viteLogger = createLogger();
 
@@ -22,9 +24,14 @@ export function log(msg: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
+  // const resolvedConfig = await (viteRootConfig as () => Promise<UserConfigExport>)();
+  const resolvedConfig = viteRootConfig;
+
+
+
   const vite = await createViteServer({
-    ...viteRootConfig,
-    configFile: false,
+    ...resolvedConfig,
+    configFile: false, // use manually loaded config
     customLogger: {
       ...viteLogger,
       error: (msg, opts) => {
@@ -37,7 +44,7 @@ export async function setupVite(app: Express, server: Server) {
       hmr: { server },
     },
     appType: "custom",
-  } satisfies InlineConfig); // ✅ Enforce types
+  });
 
   app.use(vite.middlewares);
 
@@ -45,6 +52,11 @@ export async function setupVite(app: Express, server: Server) {
     const url = req.originalUrl;
     try {
       const templatePath = path.resolve(__dirname, "..", "client", "index.html");
+
+      if (!fs.existsSync(templatePath)) {
+        throw new Error(`Template not found at ${templatePath}`);
+      }
+
       let template = await fs.promises.readFile(templatePath, "utf-8");
 
       template = template.replace(
@@ -62,16 +74,16 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const publicDir = path.resolve(__dirname, "..", "dist/public");
+  const staticDir = path.resolve(__dirname, "..", "dist", "public");
 
-  if (!fs.existsSync(publicDir)) {
-    throw new Error(`❌ Build folder not found: ${publicDir}. Did you run 'vite build'?`);
+  if (!fs.existsSync(staticDir)) {
+    throw new Error(`❌ Build folder not found: ${staticDir}. Did you run 'npm run build'?`);
   }
 
-  app.use(express.static(publicDir));
+  app.use(express.static(staticDir));
 
   app.use("*", (_req, res) => {
-    const indexPath = path.join(publicDir, "index.html");
+    const indexPath = path.join(staticDir, "index.html");
     if (!fs.existsSync(indexPath)) {
       res.status(404).send("Build index.html not found");
     } else {
