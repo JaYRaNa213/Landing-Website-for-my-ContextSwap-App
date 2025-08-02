@@ -28,7 +28,7 @@ export default function Demo() {
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-xl"
             >
               <a
-                href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/v1.0.0/OnlyOneClick.Setup.1.0.0.exe"
+                href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-5b63790aed8c1ab7268e/ContextSwap-Setup-1.0.2.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 download

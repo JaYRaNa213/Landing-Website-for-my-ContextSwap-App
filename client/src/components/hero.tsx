@@ -33,7 +33,7 @@ export default function Hero() {
 <div className="flex flex-col sm:flex-row gap-4">
   <a
     aria-label="Download ContextSwap setup for Windows"
-    href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-03f2f4fa673e9f8af2a1/ContextSwap-Setup-1.0.0.exe"
+    href="https://github.com/JaYRaNa213/ModoCore_Desktop_APP/releases/download/untagged-5b63790aed8c1ab7268e/ContextSwap-Setup-1.0.2.exe"
     download
     target="_blank"
     rel="noopener noreferrer"
